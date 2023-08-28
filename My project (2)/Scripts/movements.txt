@@ -1,0 +1,18 @@
+using UnityEngine;
+
+public class PlayerMovement : Monobehaviour
+{
+   [SerializeField] private float speed;
+   private Rigidbody2D body;
+
+   private void Awake()
+   {
+
+
+    body = GetComponent<Rigidbody2D>();
+   }
+   private void Update()
+   {
+      body.velocity= new Vector 2(Input.GetAxis("Horizontal")* speed,body.velocity.y);
+   }
+}
